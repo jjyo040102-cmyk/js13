@@ -1,40 +1,52 @@
-# STEAL THE RAINBOW
+# STEAL THE RAINBOW — 100 STAGE VARIED BUILD
 
-One horn. Seven powers. Nothing stays yours.
+A 2D puzzle platformer for js13kGames 2026. The last unicorn steals one colour at a time and transfers it between objects.
 
-A self-contained 2D puzzle platformer prepared for the **Desktop** category of js13kGames 2026 and its **Unicorns and Rainbows** theme. The last unicorn cannot create colour: it can only take colour from one object and give it to another. A fire goes out when you steal its red. Give that red to thorns and a path opens. Later chapters require borrowing the same colour back instead of leaving it behind.
+## What changed
 
-## Play
+This build replaces the old short repeating room generator with a longer, uneven difficulty campaign.
 
-Open `dist/index.html` in a desktop browser. The game is a single HTML file; no runtime server, downloads, account or installation is needed.
+- 100 deterministic stages.
+- Stage width ranges from about 1,585 px to 9,589 px; average is about 5,384 px.
+- Difficulty deliberately rises and falls instead of climbing in a straight line.
+- Stages 10/20/30/... are major peaks; 11/22/33/... are breather stages.
+- Later hard stages contain 2- and 3-step colour relays: use a colour, cross the obstacle, reclaim the same colour, then reuse it on the next obstacle.
+- Neutral traversal sections, gaps, steps, roaming creatures and vertical sections separate puzzle knots so the campaign does not feel like one repeated room.
+- Stage 100 is a 9,294 px final spectrum gauntlet using all seven colours, with repeated re-use challenges.
 
 ## Controls
 
-| Input | Action |
-|---|---|
-| A / D or left / right arrows | Move |
-| W / Space / up arrow | Jump |
-| S / down arrow | Drop through leaf bridges / faster descent |
-| Left click | Take colour / give held colour |
-| Z / UNDO | Undo a colour transfer |
-| R | Restart chapter |
-| Escape | Pause / resume |
-| M | Toggle sound |
+- A / D or arrows: move
+- Space / W / Up: jump
+- Click: take / give colour
+- Z: undo a colour transfer
+- R: restart
+- Esc: pause
+- M: sound
 
-Collect all seven rainbow diamonds in every chapter, then enter the rainbow arch.
+## Seven powers
 
-## Minimal UI edition
-
-The current competition build intentionally strips away most explanatory text. During play the HUD is limited to the seven diamond state, current horn colour, pause, sound, and undo. Hover labels, long gameplay instructions, stage headings, timers, transfer counters, hint toasts, exit text, and chapter-clear text are removed. Completing an exit now transitions directly through the rainbow effect into the next chapter.
-
-There are ten authored chapters and all seven colour powers remain unchanged.
+- Red: extinguish fire / burn thorn walls
+- Orange: move heavy rocks
+- Yellow: power sockets and gates
+- Green: grow bridges
+- Blue: freeze pools and creatures
+- Indigo: raise gravity lifts
+- Violet: activate portal pairs
 
 ## Build
 
-The current submission ZIP is **11,695 / 13,312 bytes**, leaving **1,617 bytes**. Only `index.html` is inside.
+The current readable source is stored in `src/readable_v3_parts/`. Run `python assemble_source.py` to recreate `src/game.js`.
 
-SHA-256:
+The exact current competition build is committed at:
 
-`4a66d843afa9eb39f2782bad1aa170c06c5b0e4c7342ba9416227ff1658c3a27`
+- `dist/index.html`
+- `dist/STEAL_THE_RAINBOW_js13k_SUBMIT.zip`
 
-The readable source, build tools, procedural audio, and test documentation are kept in this repository as the source counterpart to the 13KB entry.
+Final submission archive:
+
+- 11,528 / 13,312 bytes
+- 1,784 bytes free
+- SHA-256: `ec4fc18905411997a2e43e3e57a0c7fb4ed392faefef1c1ecfc6875dd8b0afaf`
+
+The ZIP contains only `index.html`.
