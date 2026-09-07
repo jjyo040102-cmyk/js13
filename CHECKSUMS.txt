@@ -1,2 +1,1 @@
-0c0c7c3b472a433c7fe982e622a0aab1baf1482869722ec6e6da66b803084ef0  dist/index.html
 ec4fc18905411997a2e43e3e57a0c7fb4ed392faefef1c1ecfc6875dd8b0afaf  dist/STEAL_THE_RAINBOW_js13k_SUBMIT.zip
