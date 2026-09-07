@@ -1,0 +1,13 @@
+STEAL THE RAINBOW — audio edition 1.1.0
+
+User direction: one-slot unicorn horn, colour stealing and seven colour powers.
+Game implementation, level layouts, Canvas artwork and procedural soundtrack/effects: created with AI assistance for this project. No purely human authorship is claimed.
+Audio: original synthesized definitions, deterministic generated noise and impulse; no sampled recordings or imported songs.
+Graphics: locally drawn Canvas paths and particles. Existing ten chapters and artwork retained.
+Fonts: local system font fallbacks only; no font files distributed.
+Networking: no runtime CDN, API, analytics or resource fetches.
+
+Build-only tools: Acorn 8.15.0, the embedded Terser optimizer and Python Zopfli 0.4.2. Third-party notices are retained under tools/. The context-mixed compression model is adapted from Roadroller (Copyright 2021 Kang Seonghoon, MIT); its generated decoder is public domain under the upstream notice. The small decoder is embedded in the shipping HTML; the build-time libraries are not.
+Testing: Playwright, Chromium, NumPy and SoundFile; FFmpeg creates the optional MP3 preview.
+Screenshots: actual browser captures. MP3: offline rendering of the real synthesis engine with scripted events, not a playthrough recording. Neither is included in the game ZIP.
+The author should choose a license for their game and make accurate submission disclosures.
