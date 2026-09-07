@@ -19,7 +19,7 @@ def make_zip(data:bytes)->bytes:
 def main():
     OUT.mkdir(exist_ok=True)
     template=(ROOT/'src/template.html').read_text(encoding='utf-8')
-    packed=(ROOT/'dist/game.packed.js').read_text(encoding='utf-8')
+    packed=''.join(p.read_text(encoding='utf-8') for p in sorted((ROOT/'dist/packed_parts').glob('*.js')))
     data=template.replace('/*GAME*/',packed).encode()
     pkg=make_zip(data)
     if len(pkg)>LIMIT: raise SystemExit(f'NOT SUBMITTABLE: {len(pkg)} bytes')
