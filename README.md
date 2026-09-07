@@ -6,7 +6,7 @@ A self-contained 2D puzzle platformer prepared for the **Desktop** category of j
 
 ## Play
 
-Open `dist/index.html` in a desktop browser. The game is a single HTML file; no runtime server, downloads, account or installation is needed. It starts on a title screen. Click **BEGIN THE HEIST** or press Enter.
+Run `python build_exact.py`, then open `dist/index.html` in a desktop browser. The game is a single HTML file; no runtime server, downloads, account or installation is needed. It starts on a title screen. Click **BEGIN THE HEIST** or press Enter.
 
 The delivered standalone `STEAL_THE_RAINBOW_AUDIO_v2.html` is byte-for-byte identical to this file. This is an English-language, keyboard-and-mouse game, not a touch-optimized mobile build. Screenshots are actual captures, not concept artwork.
 
@@ -54,16 +54,16 @@ This entry was developed with AI assistance. ChatGPT assisted with game design i
 
 ## Build
 
-Install Node.js and Python, then run:
+The readable gameplay source is `src/game.js`. For an exact, deterministic rebuild of the competition archive:
 
 ```sh
 python -m pip install -r requirements.txt
-python build.py
+python build_exact.py
 ```
 
-No npm installation is required: Acorn and the build-only optimizer are vendored with their notices. `tools/pack.cjs` implements a context-mixed rANS build pass adapted from Roadroller; the generated decoder is embedded in the HTML. Decoding occurs once at startup; it does not fetch anything or alter the gameplay. The build verifies exact source reconstruction, then writes a deterministic standard DEFLATE ZIP.
+`dist/game.packed.js` is the checked-in packed intermediate used for the exact competition build. `build_exact.py` combines it with `src/template.html` and writes a standard DEFLATE ZIP. The resulting archive is **12,737 / 13,312 bytes**, leaving **575 bytes**, with SHA-256 `322bb3e242df345898b89d5994beed3c3f3d896d00ea60e8b37eb64efe6c0b82`. Only `index.html` is inside.
 
-The submission ZIP is **12,737 / 13,312 bytes**, leaving **575 bytes**. Only `index.html` is inside. Do not submit this entire source package or recompress the game casually.
+The packed intermediate is provided for byte-for-byte reproducibility; it is **not** the review source. Reviewers should read `src/game.js`, which contains the authored gameplay, rendering, level data and procedural audio code.
 
 ## Validation
 
